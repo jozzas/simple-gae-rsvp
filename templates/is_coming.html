@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}John&Julia Marry Up!{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<ul id="minitabs">
+	<li><a href="/" class="active">RSVP</a></li>
+	<li><a href="/details">Details</a></li>
+</ul>
+</div>
+
+<h2>Hello.</h2>
+<trailer>Julia and John are getting married on the 6th of April 2013, at Walkabout Creek, Brisbane, Australia. We hope you'll be able to join us.</trailer></br></br>
+
+<trailer>Please put your things in the thing and click the button to let us know.</trailer>
+
+</br></br>
+</br></br>
+
+<div id="centred">
+<form action="/details" method="post" class="newform" id="yesno">
+  		<fieldset>
+  		<legend> Your party's details </legend>
+  		
+  		<li> <label for="id_email">Will you be attending?</label>  
+  			<span class="required">*</span>
+  			<span class="my_radio">
+        	<input type="radio" id="radio_yes_no" value="Yes" name="coming" />
+        	Yes
+        	<input type="radio" id="radio_yes_no" value="No" name="coming" />
+        	No
+        	</span>
+        </li>
+        
+        <li> <label for="id_name">Your Name</label> 
+			<span class="required">*</span>
+			<input type="text" name="name" id="id_name" />
+    	</li>
+        
+    	<li> <label for="id_email">Contact Email</label> 
+			<span class="required">*</span>
+			<input type="text" name="email" id="id_email" />
+    	</li>
+    	
+    	<li> <label for="id_email">Contact Phone</label> 
+			<span class="required">*</span>
+			<input type="text" name="phone" id="id_phone" />
+    	</li>
+    	
+    	<li> <label for="id_totalnumber">Total Attending</label> 
+			<span class="required">*</span>
+			<select name="totalnumber" id="id_totalnumber"> 
+						  <option value="1">1</option> 
+						  <option value="2">2</option> 
+						  <option value="3">3</option> 
+						  <option value="4">4</option> 
+						  <option value="5">5</option> 
+			</select>
+    	</li>
+    	
+    	<li> <label for="id_spec">Special Requirements?</label> 
+			<input type="text" name="spec" id="id_spec" />
+    	</li>
+    	
+    	</fieldset>
+    	<fieldset>
+  		<legend> Other party members </legend>
+ 		
+ 		<li> <label for="id_2name">Name</label> 
+			<input type="text" name="2name" id="id_2name" /></br>
+			<label for="id_2spec">Special Requirements?</label> 
+			<input type="text" name="2spec" id="id_2spec" />
+    	</li>
+    	
+    	<li> <label for="id_3name">Name</label> 
+			<input type="text" name="3name" id="id_3name" /></br>
+			<label for="id_3spec">Special Requirements?</label> 
+			<input type="text" name="3spec" id="id_3spec" />
+    	</li>
+    
+        <li> <label for="id_4name">Name</label> 
+			<input type="text" name="4name" id="id_4name" /></br>
+			<label for="id_4spec">Special Requirements?</label> 
+			<input type="text" name="4spec" id="id_4spec" />
+    	</li>
+    	
+        <li> <label for="id_5name">Name</label> 
+			<input type="text" name="5name" id="id_5name" /></br>
+			<label for="id_5spec">Special Requirements?</label> 
+			<input type="text" name="5spec" id="id_5spec" />
+    	</li>
+ 		
+ 		<input id="partysubmit" type="Submit" class="button"/>
+</form>
+</span>
+
+{% endblock %}

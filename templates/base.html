@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<script src="https://www.google.com/jsapi?key=ABQIAAAABKK2OkSyisPs-exGngl3ixTSeCd4opDTJHzqSI8O9D2A_mzreRTdjgDodm3ixuPNfQrGIQBwVXSd7Q" type="text/javascript"></script>
+{% block ExtraHeaders %}{% endblock %}
+<script type="text/javascript">
+google.load("jquery", "1.4.4");
+google.load("jqueryui", "1.8.8");
+
+function DrawButtons() {
+  $( "button, input:submit").button();
+};
+
+function ShowError(message) {
+  $( '#errortext' ).html(message);
+  $( '#errormessage' ).show('highlight');
+};
+{% block ExtraJavascript %}{% endblock %}
+{% block OnLoad %}
+function OnLoad() {
+  DrawButtons();
+{% endblock %}
+}; {# This allows for block.super to be used to add functions to OnLoad #}
+google.setOnLoadCallback(OnLoad);
+</script>
+<title>{% block title %}RSVP for Wedding{% endblock %}</title>
+<meta name="Description" content="John & Julia's Wedding RSVP" />
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/redmond/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="/css/rsvp.css" />
+</head>
+<body>
+<div id="errormessage" class="ui-widget rsvpalert" {% if not errormessage %}style="display: none"{% endif %}>
+  <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+    <p>
+      <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+      <strong>Error:</strong> <span id="errortext">{{ errormessage }}</span>
+    </p>
+  </div>
+</div>
+
+<div id="content">
+     {% block content %}{% endblock %}
+</div>
+</body>
+</html>

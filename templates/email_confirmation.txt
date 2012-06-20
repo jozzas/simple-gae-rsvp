@@ -1,0 +1,20 @@
+{% filter wordwrap:90 %}
+Thanks for your RSVP to our wedding!
+
+We have received your RSVP and {% if is_coming %}will be delighted to see you there on the day.{% endif %}{% if not_coming %}are sad to hear you can't make it.{% endif %}
+
+If you need to be in touch, you can contact 
+
+John
++61 405 306 376
+jozzas@gmail.com
+
+Julia
++61 434 00 88 79
+juliastevenson85@gmail.com
+
+Or visit the website to see all the detail.
+
+  Much love and {% if is_coming %}see you there!{% endif %}{% if not_coming %}warmest wishes,{% endif %}
+    Julia and John
+{% endfilter %}

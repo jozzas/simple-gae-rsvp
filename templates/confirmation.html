@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Thanks for your RSVP!{% endblock %}
+
+<p>We have received your RSVP and {% if is_coming %}will be delighted to see you there on the day.{% endif %}{% if not_coming %}are sad to hear you can't make it.{% endif %}
+
+If you need to be in touch, you can contact </br></br>
+
+John</br>
++61 405 306 376</br>
+jozzas@gmail.com</br></br>
+
+Julia</br>
++61 434 00 88 79</br>
+juliastevenson85@gmail.com</br></br>
+
+Or visit the website to see all the detail.</br></br>
+
+  Much love and {% if is_coming %}we'll see you there!{% endif %}{% if not_coming %}warmest wishes,{% endif %}</br>
+    Julia and John</br></br>
+</p>
+
+{% endblock %}

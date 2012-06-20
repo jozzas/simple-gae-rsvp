@@ -1,0 +1,72 @@
+<html>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor='#124A28'>
+
+<table width="100%" cellpadding="10" cellspacing="0" class="backgroundTable" bgcolor="#124A28" >
+<tr>
+<td valign="top" align="center">
+
+
+<table width="550" cellpadding="0" cellspacing="0">
+
+<tr>
+<td style="background-color:#DBDBDB">
+      <table width="500" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="color: #061506; text-align:center;">
+             <h1>Thank you for your RSVP!</h1>
+           </td>
+        </tr>
+      </table>
+</td>
+</tr>
+
+<tr>
+<td style="background-color:#DBDBDB;border-top:0px solid #333333;border-bottom:10px solid #FFFFFF;"></td>
+</tr>
+</table>
+
+
+<table width="550" cellpadding="20" cellspacing="0" bgcolor="#124A28">
+<tr>
+<td bgcolor="#4F7B3B" valign="top" style="font-size:12px;color:#DBDBDB;line-height:150%;font-family:trebuchet ms;">
+
+<p>
+<span style="font-size:20px;font-weight:bold;color:#FFFFFF;font-family:arial;line-height:140%;">{% if is_coming %}You're Coming! Hooray!{% endif %}{% if not_coming %}You won't be making it :({% endif %}</span>
+<span style="style=font-size:13px;font-family:arial;">
+We have received your RSVP and {% if is_coming %}will be delighted to see you there on the day.{% endif %}{% if not_coming %}are sad to hear you can't make it.{% endif %}</br>
+</span>
+<span style="style=font-size:13px;font-family:arial;">
+If you need to be in touch, you can contact </span>
+<span style="style=font-size:13px;font-family:arial;">
+<p><b>John</b></p>
+<p>+61 405 306 376</p>
+<p>jozzas@gmail.com</p>
+</span>
+<span style="style=font-size:13px;font-family:arial;">
+<p>Julia</p>
+<p>+61 434 00 88 79</p>
+<p>juliastevenson85@gmail.com</p>
+</span>
+<span style="style=font-size:13px;font-family:arial;">Or visit the website to see all the detail.</span>
+</p>
+
+</td>
+</tr>
+
+<tr>
+<td style="background-color:#DBDBDB;border-top:10px solid #FFFFFF;" valign="top">
+<span style="font-size:15px;color:#003506;line-height:130%;font-family:arial;">
+  <p>  Much love and {% if is_coming %}we'll see you there!{% endif %}{% if not_coming %}warmest wishes,{% endif %}</span>
+   <span style="font-size:18px;color:#003506;line-height:130%;font-family:arial;"> - Julia and John </span>
+</span>
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

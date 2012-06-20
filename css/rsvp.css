@@ -1,0 +1,348 @@
+/* NAVBAR */
+.container {
+	padding: 0 0 30px 50px;
+	margin: 20px 0 20px 0;
+	width: 700px;
+	}
+
+#minitabs {
+	margin: 0;
+	padding: 0 0 20px 10px;
+	border-bottom: 1px solid #00680e;
+	}
+
+#minitabs li {
+	margin: 0; 
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+	}
+	
+#minitabs a:link, #minitabs a:visited {
+	float: left;
+	line-height: 1.0em;
+	font-weight: bold;
+	margin: 0 10px 4px 10px;
+	padding-bottom: 4px;
+	text-decoration: none;
+	color: #60986e;
+	}
+
+#minitabs a.active:link, #minitabs a.active:visited, #minitabs a:hover {
+	border-bottom: 4px solid #00680e;
+	padding-bottom: 5px;
+	color: #363;
+	}
+	
+/* Notification */
+
+#success{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    max-width:700px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+  /*  background-image:url('success.png'); */
+}
+
+
+#radio {
+  font-size: 11pt;
+}
+#notcoming {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ; 
+}
+#content {
+  text-align: left;
+  margin-left: 100px;
+}
+#errormessage {
+}
+#errortext {
+}
+#yesnoform {
+  text-align: left;
+}
+#nameinstructions {
+  display: none;
+}
+#nameboxes {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#tripdetail_form {
+  margin-top: 0px;
+}
+#roomnumber {
+  margin-bottom: 0px;
+}
+#hotelfields {
+  margin-top: 15px;
+}
+#invitation {
+  margin: 0px;
+  font-size: 9pt;
+  padding: 0px;
+}
+#hotelnamediv {
+  margin-top: 40px;
+  padding: 30px;
+}
+#hotelname {
+  margin-top: 40px;
+}
+#notesfield {
+  width: 400px;
+  padding: 10px;
+  height: 70px;
+  font-family: Sans-serif;
+  font-size: 1.0em;
+  line-height: 100%;
+}
+#guestlist {
+  width: 700px ;
+  margin-left: auto ;
+  margin-right: auto ; 
+}
+#foodallergies {
+  font-size: 11pt;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+/* Next 4 from JQueryUI site */
+/*
+.ui-button { margin-left: -1px; }
+.ui-button-icon-only .ui-button-text { padding: 0.35em; } 
+.ui-autocomplete-input { margin: 0; padding: 0.48em 0 0.47em 0.45em; }
+.ui-autocomplete {
+  max-height: 300px;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  padding-right: 20px;
+}
+*/
+/* input[type="text"] {
+  height: 30px;
+  font-size: 12pt;
+} 
+input[type="submit"], button {
+  margin-top: 30px;
+  font-size: 11pt;
+}
+*/
+input {
+  font-family:georgia!important;
+}
+a {
+  color:#9ff;
+}
+
+blockquote {
+  width: 440px;
+  border: 1px dotted #9BC5DB;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px;
+  white-space: normal;
+  font-size: 10pt;
+  z-index:-1;
+}
+
+html,body {
+  padding:0;
+  margin:0;
+  direction:ltr;
+}
+body {
+  font-family:Helvetica,Arial,Verdana,sans-serif;
+  font:normal 12pt Arial,sans-serif;
+  color:#2e2b2f;
+  line-height:110%;
+  background-color:#f0f0f0;
+}
+
+h2 {
+  font-size:3em;
+  padding: 0;
+  margin-left:50px;
+}
+
+h3 {
+  font-size:1.6em;
+  padding: 0;
+  margin-left:-10px;
+  margin-bottom:10px;
+  margin-top:30px;
+}
+
+trailer{
+  margin-left:50px;
+  padding: 10px 5 5 5;
+}
+
+body.ar {
+  font-size:12pt;
+}
+a img {
+  border:0;
+  padding:0;
+}
+
+div#centred {
+  border:0;
+  margin-left: 50px;
+  width: 700px;
+  float:center;
+  padding: 10px 5 5 5;
+  }
+
+.required {font:bold 12px/1em "Liberation sans", Arial, Helvetica, sans-serif; color:#a50505;}
+
+/* New form styling */
+
+form.newform {
+	width: 455px;
+	font-size: 1.0em;
+	color: #333;
+	}
+	
+form.newform legend { padding-left: 0; }
+	
+form.newform legend,
+form.newform label { color: #333; }
+
+form.newform fieldset {
+	border: none;
+	border-top: 1px solid #C9DCA6;
+	}
+	
+form.newform fieldset fieldset { background: none; }
+	
+form.newform fieldset li {
+	padding: 5px 10px 7px;
+	background: url(newform-divider.gif) left bottom repeat-x;
+	}
+
+form.newform fieldset ul li {
+	background:none;
+}
+
+form.newform fieldset { margin-bottom: 10px; }
+	
+form.newform legend {
+	padding: 0 2px;
+	font-weight: bold;
+	_margin: 0 -7px; /* IE Win */
+	}
+	
+form.newform label {
+	display: inline-block;
+	line-height: 1.8;
+	vertical-align: top;
+	}
+	
+form.newform fieldset ol {
+	margin: 0;
+	padding: 0;
+	}
+	
+form.newform fieldset li {
+	list-style: none;
+	padding: 8px;
+	margin: 0;
+	}
+
+form.newform fieldset li span.my_radio {
+	display: inline-block;
+	margin: 0 37px;
+	}
+
+form.newform fieldset li select {
+	display: inline-block;
+	margin: 0 73px;
+	}
+
+form.newform fieldset fieldset {
+	border: none;
+	margin: 3px 0 0;
+	}
+	
+form.newform fieldset fieldset legend {
+	padding: 0 0 5px;
+	font-weight: normal;
+	}
+	
+form.newform fieldset fieldset label {
+	display: block;
+	width: auto; 
+	}
+
+form.newform label {
+	font-weight: normal;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+form.newform em {
+	font-weight: bold;
+	font-style: normal;
+	color: #f00;
+	}
+
+form.newform label { width: 200px; margin 1px 1px 1px 1px} /* Width of labels */
+form.newform fieldset fieldset label { margin-left: 203px; } /* Width plus 3 (html space) */
+
+form.newform div.submit-wrapper {margin: 7px 0 0 0;}
+
+/*\*//*/ form.newform legend { display: inline-block; } /* IE Mac legend fix */
+
+
+/* +++++++++++++++++ BUTTONS ++++++++++++++++++ */
+
+
+.button {
+	-moz-box-shadow:inset -1px 1px 9px 0px #9360b0;
+	-webkit-box-shadow:inset -1px 1px 9px 0px #93f0b0;
+	box-shadow:inset -1px 1px 9px 0px #93f0b0;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0e3800), color-stop(1, #004016) );
+	background:-moz-linear-gradient( center top, #0e3800 5%, #004016 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0e3800', endColorstr='#004016');
+	background-color:#0e3820;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #002913;
+	display:inline-block;
+	color:#ffffff;
+	margin-top:10px;
+	font-family:Helvetica,Arial,Verdana,sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #001c1d;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007016), color-stop(1, #0e8800) );
+	background:-moz-linear-gradient( center top, #007016 5%, #0e8800 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007016', endColorstr='#0e8800');
+	background-color:#002016;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>RSVP Report</title>
+<style type="text/css">
+.highlight {
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+  <p><h2>People Coming</h2>
+  <h3><span class="highlight">Parties: {{coming|length}}<br /></span></h3>
+  <ul>
+    {% for party in coming %}
+    <li>
+      {{party.main_name}},{{party.num_guests}} guests total
+    </li>
+    {% endfor %}
+  </ul>
+  </p>
+  
+  <div>
+  <p><h2>People Not Coming</h2>
+  <h3><span class="highlight">Parties: {{not_coming|length}}</span></h3>
+  <ul>
+    {% for party in not_coming %}
+    <li>{{party.main_name}}, {{party.num_guests}} guests total</li>
+    {% endfor %}
+  </ul>
+  </p>
+  </div>
+  
+  </br>
+  
+  <div>
+  <p>
+  <table border="1">
+  <tr>
+    <td>RSVP Creation Date</td><td>Party Attending?</td><td>Contact Email</td><td>Contact Name</td><td>Contact Phone</td><td>_name2</td><td>_name3</td>
+    <td>_name4</td><td>_name5</td><td>_num_guests</td><td>_req2</td><td>_req3</td><td>_req4</td><td>_req5</td>
+  </tr>
+    {% for party in coming %}
+      <tr>
+      {% for item in party.sorted_attrs %}
+        <td>{{ item }}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+    
+    {% for party in not_coming %}
+      <tr>
+      {% for item in party.sorted_attrs %}
+        <td>{{ item }}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  </p>
+  </div>
+  
+</body>
+</html>
