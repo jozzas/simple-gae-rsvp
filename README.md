@@ -8,6 +8,7 @@ It's essentially just one RSVP form and a details page. It doesn't have a secret
 It sends confirmation emails and theres a report you can view to see who's been RSVPing.
 
 Features:
+---------
 - A form that takes participant info and stores it
 - Automated confirmation emails
 - Confirmation screen on submission
