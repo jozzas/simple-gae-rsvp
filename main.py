@@ -13,8 +13,6 @@ template.register_template_library('django.contrib.humanize.templatetags.humaniz
 
 DEBUGGING = False
 TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 'templates')
-#ORDINALS = ('First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth')
-#VEGETARIAN = 'Vegetarian'
 CONFIRMATION_EMAIL_SUBJECT = "RSVP Confirmation for J and J's wedding"
 EMAIL_SENDER_ADDRESS = "John and Julia <jozzas@gmail.com>"
 DEADLINE = datetime.date(2012, 12, 25)
@@ -47,29 +45,6 @@ class Rsvp(db.Model):
         _out.append(self.__dict__[key])
     return _out
 
-"""class Party(db.Model):
-  name = db.StringProperty(required=True)
-  secret = db.StringProperty(required=True)
-  email = db.EmailProperty(required=True)
-  is_coming = db.BooleanProperty()
-  size = db.IntegerProperty()
-  room_number = db.IntegerProperty()
-  notes = db.TextProperty()
-  receive_invitation = db.BooleanProperty(default=True)
-  creation_date = db.DateTimeProperty(auto_now=True)
-  modified_date = db.DateTimeProperty(auto_now_add=True)
-  confirmed_once = db.BooleanProperty()
-"""
-
-#class Person(db.Model):
- # """One human being.  There many be one or more Persons per Party."""
-  #name = db.StringProperty(required=True)
-#  vegetarian = db.BooleanProperty()
-#  party = db.ReferenceProperty(Party, collection_name='people')
-#  hidden_worlds = db.BooleanProperty()
-#  creation_date = db.DateTimeProperty(auto_now=True)
-#  modified_date = db.DateTimeProperty(auto_now_add=True)
-
 class RequestHandler(webapp.RequestHandler):
   """Subclass RequestHandler to add some convenience methods."""
   def WriteTemplate(self, filename, template_vars):
@@ -92,124 +67,16 @@ class RequestHandler(webapp.RequestHandler):
   def get(self):
     self.NAVERROR()
 
-  #def GetUserFromSession(self):
-  #  try:
-  #    sess = GetSession()
-  #    party = Party.get_by_id(sess['party_key_id'])
-  #  except:
-  #    party = None
-  #  if not party:
-  #    self.ERROR('Failure trying to look up your account from your session, please re-enter your secret word', 'get_keyword.html')
-  #  return party
-
-
-#def GetSession():
-#  return sessions.Session(writer="cookie")
-
-"""
-def PrettyList(unpretty_list):
-  if not unpretty_list:
-    return ''
-  if len(unpretty_list) == 1:
-    return unpretty_list[0]
-  elif len(unpretty_list) == 2:
-    return ' and '.join(unpretty_list)
-  else:
-    end_of_list = ', %s and %s' % (unpretty_list.pop(-2), unpretty_list.pop())
-    return ', '.join(unpretty_list) + end_of_list
-
-class PopulateTestData(RequestHandler):
-  def get(self):
-    if not DEBUGGING:
-      return
-    foo = Party(name='Test Party 1',
-                secret='foo',
-                email='jozzas+test@gmail.com').put()
-    bar = Party(name='Test Party 2',
-                secret='bar',
-                size=2,
-                email='jozzas+test@gmail.com').put()
-    baz = Party(name='Test Party 3',
-                secret='baz',
-                email='jozzas+test@gmail.com',
-                size=5).put()
-    Person(name='Person One', vegetarian=True, party=baz).put()
-    Person(name='Person Two', hidden_worlds=False, party=baz).put()
-    Person(name='Person Three', vegetarian=False, hidden_worlds=True, party=baz).put()
-    self.DEBUG('Created test data.')
-"""
-
 class LandingWithoutKeyword(RequestHandler):
-  """Initial Page that prompts for secret word. """
+  """Initial Page that shows RSVP form """
   def get(self):
     self.WriteTemplate('is_coming.html', {})
 
-#class SecretWord(RequestHandler):
-#  def get(self):
-#    """Gets secret word from URL."""
-#    secret = self.request.path.lstrip('/').strip().lower()
-#    self.DEBUG('secret: "%s"' % secret)
-#    self.HandleSecretWord(secret)
-#
-#  def post(self):
-#    """Get the secret word from a form."""
-#    secret = self.request.get('keyword').strip().lower()
-#    self.DEBUG('secret: "%s"' % secret)
-#    self.HandleSecretWord(secret)
-#
-#  def HandleSecretWord(self, secret_word):
-#    if not secret_word:
-#      self.ERROR('Your secret word cannot be blank!', 'get_keyword.html')
-#      return
-#    parties = db.GqlQuery("SELECT * FROM Party WHERE secret = :1 LIMIT 2", secret_word)
-#    matched = parties.count()
-#    if matched > 1:
-#      self.ERROR('Got more than one wedding party matched for the secret word %s: %s' % (secret_word, [p.name for p in parties]))
-#      return
-#    if not matched:
-#      self.ERROR('Sorry, that does not appear to be a valid secret word.  Please try again.', 'get_keyword.html')
-#      return
-#    party = parties.get()
-#    sess = GetSession()
-#    sess['party_key_id'] = party.key().id()
-#    template_vars = {'name': party.name}
-#    self.DEBUG('Is coming type: %s' % party.is_coming)
-#    if party.is_coming is not None:
-#      if party.is_coming:
-#        template_vars['coming'] = True
-#      else:
-#        template_vars['not_coming'] = True
-#    self.WriteTemplate('is_coming.html', template_vars)
-
-class DetailsPage(RequestHandler):
+class Details(RequestHandler): #Was detailspage
   def get(self):
     self.WriteTemplate('details.html',{})
 
-#class YesOrNo(RequestHandler):
-#   def post(self):
-#    """Handle yes and no responses."""
-#    party = self.GetUserFromSession()
-#    if not party:
-#      return
-#    coming = self.request.get('coming')
-#    self.DEBUG('coming: "%s"' % coming)
-#    if coming == 'no':
-#      party.is_coming = False
-#      party.confirmed_once = True
-#      party.put()
-#      self.WriteTemplate('notcoming.html', {'secret': party.secret})
-#      return
-#    if coming == 'yes':
-#      party.is_coming = True
-#      party.put()
-#      template_vars = {'size': party.size,
-#                       '1to6': map(None, ORDINALS, party.people.order('creation_date'))}
-#      self.WriteTemplate('party_detail.html', template_vars)
-#      return
-#    self.ERROR('Please select either yes or no!', 'is_coming.html', {'name': party.name})
-
-
-class Details(RequestHandler):
+class ProcessRequest(RequestHandler):
   def post(self):
     """Process an RSVP request. Store info."""
     
@@ -288,6 +155,7 @@ class Report(RequestHandler):
 def main():
    application = webapp.WSGIApplication([('/', LandingWithoutKeyword),
                                          ('/details', Details),
+                                         ('/process_request',ProcessRequest),
                                          #('/test', PopulateTestData),
                                          #('/secretword', SecretWord),
                                          #('/yesorno', YesOrNo),

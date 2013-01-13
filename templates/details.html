@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}John&Julia Marry Up! Details{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<ul id="minitabs">
+	<li><a href="/">RSVP</a></li>
+	<li><a href="#" class="active">Details</a></li>
+</ul>
+</div>
+
+{% if is_coming %}<div id="success">Success! Thanks for the RSVP {{ name }}, we'll see you there!</div>{% endif %}
+{% if not_coming %}<div id="success">Thanks for RSVPing, sorry you can't make it. We hope to honeymoon extensively so we might catch up then!</div>{% endif %}
+
+<h2>Info.</h2>
+<div id="centred">
+
+Julia and John are getting married at SOME PLACE ON THIS DAY THIS YEAR
+
+<h3>Location and Transport</h3>
+
+<p>THE LOCATION is a 15 minute drive from the city centre and is easily accessible by taxi (~$30). If you choose to rent a car, there is ample parking.</p>
+<p>THE LOCATION is located at </p>
+
+<p><b>ADDRESS</b></p>
+<div id="map_canvas"></div>
+
+<h3>Dress</h3>
+We don't mind, as long as you're there and you bring your dancing shoes! (No birthday suits please.) Internationals: it might be warm for you (the average is 22 and humid during the day in April), so keep this in mind.
+
+<h3>Gifts</h3>
+<p>
+<span>We appreciate your presence and your sharing in our day.</span>
+<span>If you also wish to give a gift, we won't get in the way.</span>
+<span>The last three years we've lived in sin and have all the mod cons,</span>
+<span>Pots and pans and other things; all Julia's and John's.</span>
+</br>
+<span>We'll be travelling extensively on a family wedding tour,</span>
+<span>Seeing relatives in the Ukraine and Scotland to be sure.</span>
+<span>We'll append to that a honeymoon in northern Italy,</span>
+<span>and any help you can provide we'll cherish gratefully!</span>
+</br>
+<span>(We'll probably spend it on wine!)</span>
+</p>
+
+<h3>Hotels</h3>
+<span>If you need a hotel, <b>please book early as our wedding is over an important holiday period</b> and hotels are filling up already.
+The best places are in OUR CITY near PLACE.</span>
+</br></br>
+<span>Examples include:</span>
+<ul>
+(LIST OF HOTELS)
+</ul>
+
+<span>Other useful links for finding rooms:</span>
+<ul>
+<li><span><a href="http://lastminute.com.au">lastminute.com.au</a></span></li>
+<li><span><a href="http://wotif.com.au">wotif.com.au</a></span></li>
+<li><span><a href="http://tripadvisor.com.au">tripadvisor.com.au</a></span></li>
+</ul>
+
+<h3>Contacting Us</h3>
+If you have any other questions, please contact us at EMAIL ADDRESSES.
+
+</div>
+</br>
+</br>
+</br>
+
+{% endblock %}
