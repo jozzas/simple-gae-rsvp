@@ -76,12 +76,11 @@ class Details(RequestHandler): #Was detailspage
   def get(self):
     self.WriteTemplate('details.html',{})
 
-class ProcessRequest(RequestHandler):
+class ProcessRSVP(RequestHandler):
   def post(self):
     """Process an RSVP request. Store info."""
     
     self.DEBUG(str(self.request.arguments()))
-    
     is_coming = self.request.get('coming')
     if is_coming == 'Yes':
       is_coming = True
@@ -155,7 +154,7 @@ class Report(RequestHandler):
 def main():
    application = webapp.WSGIApplication([('/', LandingWithoutKeyword),
                                          ('/details', Details),
-                                         ('/process_request',ProcessRequest),
+                                         ('/process_rsvp',ProcessRequest),
                                          #('/test', PopulateTestData),
                                          #('/secretword', SecretWord),
                                          #('/yesorno', YesOrNo),
