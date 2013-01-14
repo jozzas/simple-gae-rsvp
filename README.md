@@ -36,7 +36,7 @@ Creating Your Site
 ------------------
 - Download and extract the source
 - Remove any existing details and replace with your own in `app.yaml`, all template HTML, variables in `main.py`
-- Test on your local computer by running `dev_appserver.py path_to_your_app` from the SDK and point a browser at http://localhost:8080
+- Test on your local computer by running `dev_appserver.py path_to_your_app` from the SDK and point a browser at `http://localhost:8080`
 - Deploy to GAE site using the app engine tools: `appcfg.py update name_of_app_folder/`
 - Share the link and watch the RSVPs roll in
 - Party!
