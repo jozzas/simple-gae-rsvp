@@ -5,16 +5,10 @@ We have received your RSVP and {% if is_coming %}will be delighted to see you th
 
 If you need to be in touch, you can contact 
 
-John
-+61 405 306 376
-jozzas@gmail.com
-
-Julia
-+61 434 00 88 79
-juliastevenson85@gmail.com
+YOUR_DETAILS_TXT
 
 Or visit the website to see all the detail.
 
   Much love and {% if is_coming %}see you there!{% endif %}{% if not_coming %}warmest wishes,{% endif %}
-    Julia and John
+    YOUR_NAMES_TXT
 {% endfilter %}
